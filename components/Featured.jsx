@@ -1,11 +1,29 @@
-// import styles from "../styles/featured.module.css";
-// import Image from "next/image";
+import styles from "../styles/Featured.module.css";
+import Image from "next/image";
 
 const Featured = () => {
+    const images = [
+        "/img/featured.png",
+        "/img/featured2.png",
+        "/img/featured3.png",
+    ];
+
     return (
-        <div>
-            featured
-        </div>
+        <div className={styles.container}>
+      <div className={styles.arrowContainer} >
+        <Image src="/img/arrowl.png" alt="" layout="fill"/>
+      </div>
+      <div className={styles.wrapper} >
+        {images.map((img, i) => (
+          <div className={styles.imgContainer} key={i}>
+            <Image src="/img/featured.jpg" alt="" layout="fill" />
+          </div>
+        ))}
+      </div>
+      <div className={styles.arrowContainer}>
+        <Image src="/img/arrowr.png" layout="fill" alt="" />
+      </div>
+    </div>
     )
 }
 
